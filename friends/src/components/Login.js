@@ -30,6 +30,8 @@ export default function Login(props) {
             .catch(err => {
                 setError(err.response.data.message)
             })
+            
+        setData({ username: "", password: "" })
     }
 
 
