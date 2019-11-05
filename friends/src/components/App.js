@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Link, Route } from 'react-router-dom';
+import { Link, Route, withRouter } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core';
 
 import Login from './Login';
@@ -44,4 +44,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);

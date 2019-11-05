@@ -46,6 +46,7 @@ export default function Friends(props) {
         age: 0,
         email: ""
     })
+    const [friendAdded, setFriendAdded] = useState(false);
 
     useEffect(() => {
         api().get("/api/friends")
@@ -55,7 +56,7 @@ export default function Friends(props) {
             .catch(err => {
                 console.log(err)
             })
-    }, [])
+    }, [friendAdded])
 
     const handleChange = event => {
         setNewFriend({
@@ -75,6 +76,13 @@ export default function Friends(props) {
                 console.log(err)
             })
         
+        setNewFriend({
+            name: "",
+            age: 0,
+            email: ""
+        })
+
+        setFriendAdded(!friendAdded)
     }
 
     // useEffect(() => {
